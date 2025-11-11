@@ -4,12 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Bootstrap primeiro -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-
-    <!-- Seu CSS depois para sobrescrever o Bootstrap -->
     <link rel="stylesheet" href="../CSS/login.css">
 
     <title>Acolha - Usuário</title>
@@ -19,6 +15,10 @@
     body,
     html {
         height: 100%;
+    }
+
+    p{
+        font-family: 'Corpo';
     }
 
     body {
@@ -33,7 +33,7 @@
     .card {
         border-radius: 8px;
         backdrop-filter: blur(3px);
-    }   
+    }
 
     /* Centraliza o conteúdo verticalmente e impede quebra do layout */
     .container-center {
@@ -99,14 +99,14 @@
 <body>
 
     <!-- BARRA DE NAVEGAÇÃO -->
-    <header class="header" style="font-family: 'Corpo';">
+    <header class="header">
         <nav class="nav">
-            <a href="#" class="logo" style="font-family: 'Corpo';"></a>
-            <button class="navegação" aria-label="menu" style="font-family: 'Corpo';"></button>
+            <a style="font-family: 'Corpo';" href="../index.html" class="logo"></a>
+            <button class="navegação">
+                <div></div>
+            </button>
             <ul class="nav-list">
-                <li><a style="font-family: 'Corpo';" href="./projetosSociais.html">Projetos Sociais</a></li>
-                <li><a style="font-family: 'Corpo';" href="#">Ajuda</a></li>
-                <li><a style="font-family: 'Corpo';" href="./login.html">Login</a></li>
+                <li><a style="font-family: 'Corpo';" href="./AcompanheSuaSolicitação.html">Acompanhe sua Solicitação</a></li>
                 <li><a style="font-family: 'Corpo';" href="#" class="imagem-menu"></a></li>
             </ul>
         </nav>
@@ -172,14 +172,15 @@
 
     <!-- FOOTER -->
 
-        <footer>
+    <footer>
         <div id="footer_content">
             <div id="footer_contacts">
                 <h1 style="font-family: 'Corpo';">Acolha</h1>
                 <p style="font-family: 'Corpo';">Acolhendo vidas. Construindo Futuros</p>
 
                 <div id="footer_social_media">
-                    <a style="font-family: 'Corpo';" href="https://www.instagram.com/acolha2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    <a style="font-family: 'Corpo';"
+                        href="https://www.instagram.com/acolha2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                         class="footer-link" id="instagram" target="_blank" rel="noopener">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -197,10 +198,12 @@
                     <a style="font-family: 'Corpo';" href="./WEB/tiVerde.html" class="footer-link">TI Verde</a>
                 </li>
                 <li>
-                    <a style="font-family: 'Corpo';" href="./WEB/historiaDosImigrantes.html" class="footer-link">História dos Imigrantes</a>
+                    <a style="font-family: 'Corpo';" href="./WEB/historiaDosImigrantes.html"
+                        class="footer-link">História dos Imigrantes</a>
                 </li>
                 <li>
-                    <a style="font-family: 'Corpo';" href="./WEB/historiaDoAtlas.html" class="footer-link">Nosso Mascote</a>
+                    <a style="font-family: 'Corpo';" href="./WEB/historiaDoAtlas.html" class="footer-link">Nosso
+                        Mascote</a>
                 </li>
             </ul>
 
@@ -212,7 +215,7 @@
                     <a style="font-family: 'Corpo';" href="#Equipe" class="footer-link">Equipe</a>
                 </li>
                 <li>
-                    <a style="font-family: 'Corpo';"href="#" class="footer-link">Contato</a>
+                    <a style="font-family: 'Corpo';" href="#" class="footer-link">Contato</a>
                 </li>
             </ul>
 

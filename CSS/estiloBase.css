@@ -437,10 +437,6 @@ footer {
     padding: 0;
 }
 
-a {
-    font-family: sans-serif;
-    text-decoration: none;
-}
 
 .header {
     background: #357447;
@@ -474,6 +470,8 @@ a {
     gap: 32px;
     margin-top: 8px;
     list-style: none;
+    z-index: 1000; /* garante que fique acima do main e footer */
+    position: relative; /* mantém o fluxo normal mas permite z-index */
 }
 
 .nav-list a {
@@ -630,8 +628,10 @@ a {
         z-index: 1;
     }
 
+    /* Mobile menu */
+@media (max-width: 750px) {
     .nav-list {
-        position: fixed;
+        position: fixed; /* manter fixed para tela cheia */
         top: 0;
         left: 0;
         width: 100vw;
@@ -646,7 +646,27 @@ a {
         gap: 0;
 
         pointer-events: none;
+        z-index: 999; /* menu acima de tudo */
     }
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .navegação {
+        display: block;
+        z-index: 1000; /* ícone x acima do menu */
+    }
+
+    .nav.active .navegação {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+}
+
 
     .nav-list a {
         font-size: 24px;
@@ -739,7 +759,7 @@ a {
     }
 
     .card-icon img {
-        width: 100% !important;
+        width: 80% !important;
         max-width: 300px !important;
         height: auto !important;
     }
@@ -888,7 +908,7 @@ a {
     margin: 0 !important;                 /* remove margin:auto */
     justify-content: flex-start !important; /* alinha items ao início (esq) */
     align-items: flex-start !important;
-    padding-left: 0.5rem !important;      /* ajuste opcional de padding */
+    padding-left: 3.5rem !important;      /* ajuste opcional de padding */
 }
 
 /* Se o container pai usa utilitários bootstrap que centralizam, sobrescreve */
@@ -896,7 +916,6 @@ a {
 .container-center,
 .row-cards-container {
     display: flex !important;
-    justify-content: flex-start !important;
     align-items: flex-start !important;
 }
 

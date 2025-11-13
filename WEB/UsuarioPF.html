@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/login.css">
 
+    <!-- Bootstrap primeiro -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Acolha - Cadastro</title>
+
+    <!-- Seu CSS depois para sobrescrever o Bootstrap -->
+    <link rel="stylesheet" href="../CSS/login.css">
+
+    <title>Acolha - Usuário</title>
 </head>
 
 <style>
@@ -26,6 +30,11 @@
         min-height: 100vh;
     }
 
+    .card {
+        border-radius: 8px;
+        backdrop-filter: blur(3px);
+    }   
+
     /* Centraliza o conteúdo verticalmente e impede quebra do layout */
     .container-center {
         display: flex;
@@ -35,72 +44,69 @@
         padding: 20px;
     }
 
-    /* Corrige largura da .card no mobile */
-    .card {
-        width: 100%;
-        max-width: 700px;
-        background-color: rgba(255, 255, 255, 0.9);
-        /* Leve transparência */
-        border-radius: 8px;
-        backdrop-filter: blur(3px);
-        /* Efeito bonito se quiser */
-    }
-
-    /* Garante que o botão de navegação não sobreponha o conteúdo */
-    .navegação {
-        z-index: 2000 !important;
-    }
-
-    p{
-        font-family: 'Corpo';
-    }
-
-    /* Força o menu a aparecer acima, mas não quebrar o conteúdo */
-    .nav-list {
-        z-index: 1500;
-    }
-
-    .titulo-principal {
-        margin: 20px;
-        /* margem padrão */
-        font-family: 'Lemon Tuesday', cursive;
-        text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
-        color: #357447;
-        font-weight: bold;
-    }
-
-    /* Coloca o formulário abaixo do menu mobile */
     @media (max-width: 750px) {
-        .container-center {
-            margin-top: -100px !important;
-            margin-bottom: -50px !important;
-            z-index: 500;
 
+        /* Corrige largura da .card no mobile */
+        .card {
+            width: 100%;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Leve transparência */
+            border-radius: 8px;
+            backdrop-filter: blur(3px);
+            /* Efeito bonito se quiser */
         }
 
-        .card {
-            width: 95% !important;
+        /* Garante que o botão de navegação não sobreponha o conteúdo */
+        .navegação {
+            z-index: 2000 !important;
+        }
+
+        /* Força o menu a aparecer acima, mas não quebrar o conteúdo */
+        .nav-list {
+            z-index: 1500;
         }
 
         .titulo-principal {
-            margin-bottom: 25px !important;
-
+            margin: 20px;
+            /* margem padrão */
+            font-family: 'Lemon Tuesday', cursive;
+            text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+            color: #357447;
+            font-weight: bold;
         }
 
+        /* Coloca o formulário abaixo do menu mobile */
+        @media (max-width: 750px) {
+            .container-center {
+                margin-top: 100px;
+                z-index: 500;
+            }
+
+            .card {
+                width: 95% !important;
+            }
+
+            .titulo-principal {
+                margin-bottom: 25px !important;
+
+            }
+
+        }
     }
 </style>
 
 <body>
 
     <!-- BARRA DE NAVEGAÇÃO -->
-    <header class="header">
+    <header class="header" style="font-family: 'Corpo';">
         <nav class="nav">
-            <a style="font-family: 'Corpo';" href="../index.html" class="logo"></a>
-            <button class="navegação">
-                <div></div>
-            </button>
+            <a href="#" class="logo" style="font-family: 'Corpo';"></a>
+            <button class="navegação" aria-label="menu" style="font-family: 'Corpo';"></button>
             <ul class="nav-list">
-                <li><a style="font-family: 'Corpo';" href="./AcompanheSuaSolicitação.html">Acompanhe sua Solicitação</a></li>
+                <li><a style="font-family: 'Corpo';" href="./projetosSociais.html">Projetos Sociais</a></li>
+                <li><a style="font-family: 'Corpo';" href="#">Ajuda</a></li>
+                <li><a style="font-family: 'Corpo';" href="./login.html">Login</a></li>
                 <li><a style="font-family: 'Corpo';" href="#" class="imagem-menu"></a></li>
             </ul>
         </nav>
@@ -108,62 +114,60 @@
 
     <!-- CORPO DO SITE -->
 
-    <h1 class="titulo-principal" style="
-        margin: 40px 10px 20px;
+    <div class="container-center d-flex justify-content-center align-items-center"
+        style="margin-top: 0px; margin-bottom: 1px;">
+        <div class="card" style="width: 90%; padding: 35px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <div style=" display: flex; flex-direction: row; justify-content:space-between; margin-top: -1rem;">
+                <h1 class="titulo-principal" style="
         font-family: 'Lemon Tuesday';
         text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
         color: #357447;
         font-weight: bold;
-        font-size: 2.5rem;
-        text-align:center;
-      ">Tela de
-        Cadastro - Pessoa Física</h1>
+        font-size: 2.5rem; margin-left: 17px;
+      ">Olá, NOME!</h1>
 
-    <div class="container-center d-flex justify-content-center align-items-center"
-        style="margin-top: 2%; margin-bottom: 5%;">
-        <div class="card" style="width: 80%; padding: 35px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="nome" placeholder="Nome" aria-label="Username"
-                    aria-describedby="basic-addon1">
+                <a href=""><img style="width: 60px; height: 60px; margin-top: 20px;" src="../IMG/icone.png" alt=""></a>
             </div>
+            <h6 style="margin-left: 20px; margin-top: -10px;">emaildousuario@exemplo.com</h6>
 
-            <div class="input-group mb-3">
-                <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Recipient’s username"
-                    aria-describedby="basic-addon2">
-                
+                <p style="margin-top: 20px; margin-left: 20px; margin-bottom: 2px;"><b>Meus pedidos de ajuda</b></p>
+                <div class="card" style="width: 20rem; margin-left: 16px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Assunto</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Nº de Protocolo</h6>
+                        <p class="card-text">Descrição</p>
+                        <a href="#" class="card-link">Acessar solicitação</a>
 
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">Senha</span>
-                <input type="password" class="form-control senha" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
-            </div>
-
-            <div class="mb-3">
-                <label for="basic-url" class="form-label">Informações</label>
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon3">CPF</span>
-                    <input type="text" class="form-control cpf" id="basic-url cpf" aria-describedby="basic-addon3 basic-addon4">
+                    </div>
                 </div>
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text">Telefone</span>
-                <input type="text" class="form-control telefone" aria-label="Amount (to the nearest dollar)">
-            </div>
-
-            <div class="input-group mb-3">
-                <input type="text" class="form-control nacionalidade" placeholder="Nacionalidade" aria-label="Username">
-                <span class="input-group-text">Data de Nascimento</span>
-                <input type="date" class="form-control dataNasc" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
-            </div>
-
-            <div class="d-flex justify-content-end mt-3">
-                <button type="submit" id="btn" class="btn btn-success">Cadastrar</button>
-            </div>
-
-
+                <p style="margin-top: 20px; margin-left: 20px;"><b>Vagas de emprego</b></p>
+                <div class="scroll-wrapper"></div>
+                <div class="row-cards">
+                    <div class="profile-card">
+                        <img src="../IMG/LogoAcolhaBranco.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome da Empresa</h3>
+                        <p class="card-text">Função</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Canditadar-se</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/LogoAcolhaBranco.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome da Empresa</h3>
+                        <p class="card-text">Função</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Canditadar-se</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/LogoAcolhaBranco.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome da Empresa</h3>
+                        <p class="card-text">Função</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Canditadar-se</button>
+                    </div>
+                </div>
         </div>
+    </div>
+
+    </div>
+
+    </div>
     </div>
 
     <!-- FOOTER -->
@@ -220,7 +224,7 @@
                 </p>
 
                 <div id="input_group">
-                    <input type="email" id="email input"/>
+                    <input type="email" id="email">
                     <button>
                         ➤
                     </button>
@@ -238,7 +242,6 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
     <script src="../JS/barraDeNavegação.js"></script>
-    <script src="../JS/cadastro/cadastroPF.js"></script>
 </body>
 
 </html>

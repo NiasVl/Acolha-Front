@@ -218,7 +218,7 @@
 }
 
 @font-face {
-    font-family: 'Questrial';
+    font-family: 'Corpo';
     src: url(../FON/Questrial/Questrial-Regular.ttf);
 }
 
@@ -577,5 +577,229 @@ a {
     #footer_content {
         grid-template-columns: repeat(1, 1fr);
         padding: 3rem 2rem;
+    }
+}
+.profile-card {
+    flex-direction: column;
+    /* coluna por padrão */
+    background: linear-gradient(145deg, #357447, #194726);
+    border-radius: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    margin-left: 10px;
+    padding: 2rem 1.5rem;
+    color: #fff;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem auto;
+    border-radius: 50%;
+    border: 3px solid #ffb700;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover .profile-img {
+    transform: scale(1.1);
+}
+
+.profile-card .card-title {
+    font-family: 'Titulo', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.profile-card .card-text {
+    font-family: 'Corpo', sans-serif;
+    font-size: 0.9rem;
+    color: #e6e6e6;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* troca: cor dos ícones para branco e garante que SVGs herdem a cor */
+.social-icons a {
+    width: 35px;
+    height: 35px;
+    background-color: #ffb700;
+    color: #ffffff; /* alterado para branco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* garante que SVG ou <i> herdem a cor branca */
+.social-icons a i,
+.social-icons a svg {
+    color: #ffffff;
+    fill: currentColor;
+    font-size: 1.1rem;
+}
+
+.social-icons a:hover {
+    background-color: #c48d00;
+    color: #ffffff;
+}
+
+.row-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    /* mantém os cards em linha */
+    gap: 2rem;
+    /* espaço entre os cards */
+    overflow-x: auto;
+    /* barra de rolagem horizontal */
+    padding: 2rem 1rem;
+    scroll-behavior: smooth;
+    /* rolagem suave */
+    margin: 0 auto;
+    /* centraliza a barra, mas não os cards */
+}
+
+.row-cards .card {
+    flex: 0 0 auto;
+    /* impede que os cards encolham ou se expandam */
+}
+
+
+.row-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.row-cards::-webkit-scrollbar-thumb {
+
+    background-color: #357447;
+    border-radius: 4px;
+}
+
+.row-cards::-webkit-scrollbar-track {
+    background-color: #e6e6e6;
+    margin: 10cm;
+    border-radius: 4px;
+}
+
+
+.row-cards .profile-card {
+    flex: 0 0 auto;       /* mantém os cards sem encolher ou expandir */
+    width: 300px;         /* largura fixa de cada card */
+    height: 320px !important; /* altura maior dos cards */
+}
+
+/* Responsivo: mobile, empilha em coluna */
+@media (max-width: 768px) {
+    .row-cards {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        justify-content: center;
+    }
+
+    .row-cards .profile-card {
+        flex: 1 1 90%;
+        max-width: 90%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ===== Ajuste de tamanhos de .profile-card para ficar igual ao index (estiloBase.css) ===== */
+
+.row-cards {
+    display: flex;
+    flex-wrap: nowrap;      /* desktop: fila rolável */
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 2rem 1rem;
+    scroll-behavior: smooth;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.row-cards .card {
+    flex: 0 0 auto;
+}
+
+/* estética do card: largura igual ao index */
+.row-cards .profile-card {
+    flex: 0 0 auto;
+    width: 300px;           /* corresponde ao estiloBase */
+    max-width: 300px;
+    height: auto;           /* remove altura fixa que quebrava layout */
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    color: #fff;
+    background: linear-gradient(145deg, #357447, #194726);
+    border-radius: 2rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0;              /* controle de espaçamento pelo gap do container */
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.6);
+}
+
+/* imagem conforme estiloBase */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem auto;
+    border-radius: 50%;
+    border: 3px solid #ffb700;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover .profile-img {
+    transform: scale(1.07);
+}
+
+/* responsivo: empilha em coluna no mobile e ocupa boa parte da largura */
+@media (max-width: 768px) {
+    .row-cards {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        justify-content: center;
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .row-cards .profile-card {
+        flex: 1 1 90%;
+        max-width: 90%;
+        width: 90%;
+        margin-bottom: 1.5rem;
+        padding: 1.25rem;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Força apenas o fundo do .card para manter transparência mesmo que Bootstrap carregue depois */
+.card {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+@media (max-width: 750px) {
+    .card {
+        background-color: rgba(255, 255, 255, 0.85) !important;
     }
 }

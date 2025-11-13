@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/login.css">
+
+    <title>Acolha - Usuário</title>
+</head>
+
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    p {
+        font-family: 'Corpo';
+    }
+
+    body {
+        background-image: url('../IMG/FundoCadastro.jpeg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    .card {
+        border-radius: 8px;
+        backdrop-filter: blur(3px);
+    }
+
+    /* Centraliza o conteúdo verticalmente e impede quebra do layout */
+    .container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        padding: 20px;
+    }
+
+    .ajuda-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .ajuda-card p {
+        font-family: 'Corpo';
+        color: #333;
+        font-size: 1rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    /* Estilo do botão SOCORRO */
+    .ajuda-card .btn {
+        background-color: #255736;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-family: 'Corpo';
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 250px;
+    }
+
+    .ajuda-card .btn:hover {
+        background-color: #357447;
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(53, 116, 71, 0.4);
+    }
+
+    .ajuda-card .btn:active {
+        transform: scale(0.98);
+    }
+
+    @media (max-width: 750px) {
+
+        /* Corrige largura da .card no mobile */
+        .card {
+            width: 100%;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Leve transparência */
+            border-radius: 8px;
+            backdrop-filter: blur(3px);
+            /* Efeito bonito se quiser */
+        }
+
+        /* Garante que o botão de navegação não sobreponha o conteúdo */
+        .navegação {
+            z-index: 2000 !important;
+        }
+
+        /* Força o menu a aparecer acima, mas não quebrar o conteúdo */
+        .nav-list {
+            z-index: 1500;
+        }
+
+        .titulo-principal {
+            font-family: 'Lemon Tuesday', cursive;
+            text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+            color: #357447;
+            font-weight: bold;
+        }
+
+        .ajuda-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .ajuda-card p {
+            font-family: 'Corpo';
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        /* Estilo do botão SOCORRO */
+        .ajuda-card .btn {
+            background-color: #255736;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-family: 'Corpo';
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .ajuda-card .btn:hover {
+            background-color: #357447;
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(53, 116, 71, 0.4);
+        }
+
+        .ajuda-card .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Coloca o formulário abaixo do menu mobile */
+        @media (max-width: 750px) {
+            .ajuda-card {
+                padding: 1.5rem;
+            }
+
+            .ajuda-card .btn {
+                width: 100%;
+                padding: 14px 20px;
+            }
+        }
+    }
+</style>
+
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header class="header">
+        <nav class="nav">
+            <a style="font-family: 'Corpo';" href="../index.html" class="logo"></a>
+            <button class="navegação">
+                <div></div>
+            </button>
+            <ul class="nav-list">
+                <li><a style="font-family: 'Corpo';" href="./AcompanheSuaSolicitação.html">Acompanhe sua Solicitação</a>
+                </li>
+                <li><a style="font-family: 'Corpo';" href="#" class="imagem-menu"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CORPO DO SITE -->
+
+    <div class="container-center d-flex justify-content-center align-items-center"
+        style="margin-top: 0px; margin-bottom: 1px;">
+        <div class="card" style="width: 90%; padding: 35px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <div style=" display: flex; flex-direction: row; justify-content:space-between; margin-top: -1rem;">
+                <h1 class="titulo-principal" style="
+        font-family: 'Lemon Tuesday';
+        text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+        color: #357447;
+        font-weight: bold;
+        font-size: 2.5rem; margin-left: 17px;
+      ">Olá, NOME!</h1>
+
+                <a href=""><img style="width: 60px; height: 60px; margin-top: 20px;" src="../IMG/icone.png" alt=""></a>
+            </div>
+            <h6 style="margin-left: 20px; margin-top: -10px;">emaildousuario@exemplo.com</h6>
+
+            <p style="margin-top: 20px; margin-left: 20px; margin-bottom: -10px;"><b>Empresas Cadastradas</b></p>
+            <div class="scroll-wrapper">
+                <div class="row-cards">
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; margin-left: 20px; margin-bottom: -10px;"><b>Usuários Cadastrados</b></p>
+            <div class="scroll-wrapper">
+                <div class="row-cards">
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; margin-left: 20px; margin-bottom: 10px;"><b>Solicitações de Ajuda sem resposta</b></p>
+
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 16px; margin-left: 16px;">
+                <div class="card" style="flex: 1 1 calc(33.333% - 12px); min-width: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Assunto</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Nº de Protocolo</h6>
+                        <p class="card-text">Descrição</p>
+                        <a href="#" class="card-link">Acessar solicitação</a>
+                    </div>
+                </div>
+                <div class="card" style="flex: 1 1 calc(33.333% - 12px); min-width: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Assunto</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Nº de Protocolo</h6>
+                        <p class="card-text">Descrição</p>
+                        <a href="#" class="card-link">Acessar solicitação</a>
+                    </div>
+                </div>
+                <div class="card" style="flex: 1 1 calc(33.333% - 12px); min-width: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Assunto</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Nº de Protocolo</h6>
+                        <p class="card-text">Descrição</p>
+                        <a href="#" class="card-link">Acessar solicitação</a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px;" class="ajuda-card">
+                <p>Você tem <b>[Nº de pendencias]</b> pendências</p>
+                <button class="btn">Consultar</button>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1 style="font-family: 'Corpo';">Acolha</h1>
+                <p style="font-family: 'Corpo';">Acolhendo vidas. Construindo Futuros</p>
+
+                <div id="footer_social_media">
+                    <a style="font-family: 'Corpo';"
+                        href="https://www.instagram.com/acolha2025?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        class="footer-link" id="instagram" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                            <path fill="#ffffff"
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        </svg> </a>
+                </div>
+            </div>
+
+            <ul class="footer-list">
+                <li>
+                    <h3 style="font-family: 'Corpo';">Conteúdos</h3>
+                </li>
+                <li>
+                    <a style="font-family: 'Corpo';" href="./WEB/tiVerde.html" class="footer-link">TI Verde</a>
+                </li>
+                <li>
+                    <a style="font-family: 'Corpo';" href="./WEB/historiaDosImigrantes.html"
+                        class="footer-link">História dos Imigrantes</a>
+                </li>
+                <li>
+                    <a style="font-family: 'Corpo';" href="./WEB/historiaDoAtlas.html" class="footer-link">Nosso
+                        Mascote</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3 style="font-family: 'Corpo';">Civitas Tech</h3>
+                </li>
+                <li>
+                    <a style="font-family: 'Corpo';" href="#Equipe" class="footer-link">Equipe</a>
+                </li>
+                <li>
+                    <a style="font-family: 'Corpo';" href="#" class="footer-link">Contato</a>
+                </li>
+            </ul>
+
+            <div id="footer_subscribe">
+                <h3 style="font-family: 'Corpo';">Sugestões</h3>
+
+                <p style="font-family: 'Corpo';">
+                    Envie aqui suas sugestões, dúvidas ou críticas. Sua opinião é muito importante para nós!
+                </p>
+
+                <div id="input_group">
+                    <input type="email" id="email">
+                    <button>
+                        ➤
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            2025 todos os direitos reservados. Acolha é uma marca registrada da Civitas Tech.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="../JS/barraDeNavegação.js"></script>
+</body>
+
+</html>

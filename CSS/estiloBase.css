@@ -437,10 +437,6 @@ footer {
     padding: 0;
 }
 
-a {
-    font-family: sans-serif;
-    text-decoration: none;
-}
 
 .header {
     background: #357447;
@@ -474,6 +470,8 @@ a {
     gap: 32px;
     margin-top: 8px;
     list-style: none;
+    z-index: 1000; /* garante que fique acima do main e footer */
+    position: relative; /* mantém o fluxo normal mas permite z-index */
 }
 
 .nav-list a {
@@ -630,8 +628,10 @@ a {
         z-index: 1;
     }
 
+    /* Mobile menu */
+@media (max-width: 750px) {
     .nav-list {
-        position: fixed;
+        position: fixed; /* manter fixed para tela cheia */
         top: 0;
         left: 0;
         width: 100vw;
@@ -646,7 +646,27 @@ a {
         gap: 0;
 
         pointer-events: none;
+        z-index: 999; /* menu acima de tudo */
     }
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .navegação {
+        display: block;
+        z-index: 1000; /* ícone x acima do menu */
+    }
+
+    .nav.active .navegação {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+}
+
 
     .nav-list a {
         font-size: 24px;
@@ -739,7 +759,7 @@ a {
     }
 
     .card-icon img {
-        width: 100% !important;
+        width: 80% !important;
         max-width: 300px !important;
         height: auto !important;
     }
@@ -754,11 +774,12 @@ a {
 }
 
 .container-card {
-    min-height: 50vh;
-    /* ou ajuste para 60vh, 50vh, etc */
+    width: 80%;
+    min-height: 50vh; /* ou ajuste conforme necessário */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 0 auto; /* Garante que a div esteja centralizada na página */
 }
 
 /* ===== ROW DE CARDS ROLÁVEL ===== */
@@ -819,4 +840,87 @@ a {
         max-width: 90%;
         margin-bottom: 1.5rem;
     }
+}
+
+.card-static {
+    display: flex;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre para a próxima linha */
+    align-items: flex-start; /* Alinha os itens no topo */
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 5px 5px 10px #494949;
+    padding: 1em;
+    background: linear-gradient(to left, #357447 50%, #194726 50%);
+    background-size: 200%;
+    background-position: right;
+    flex-direction: row; /* No desktop, imagem à esquerda e texto à direita */
+}
+
+.card-static .card-icon {
+    flex: 0 0 250px; /* Define a largura fixa da imagem */
+    margin-right: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-static .card-icon img {
+    width: 250px;
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 1em; /* Garante espaço abaixo da imagem */
+}
+
+.card-static .card-body {
+    flex: 1; /* Faz o texto ocupar o restante do espaço */
+    padding: 1em 0;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+/* Responsivo: Quando a tela for menor, o texto vai para baixo da imagem */
+@media (max-width: 768px) {
+    .card-static {
+        flex-direction: column; /* Altera para coluna no mobile */
+        align-items: center; /* Centraliza os itens */
+        width: 100%; /* Certifica-se de que a card ocupa toda a largura */
+    }
+
+    .card-static .card-icon {
+        margin-right: 0; /* Remove a margem lateral */
+        margin-bottom: 1em; /* Adiciona espaço abaixo da imagem */
+        width: 100%; /* Garante que a imagem ocupe a largura disponível */
+        max-width: 300px; /* Limita a largura da imagem */
+    }
+
+    .card-static .card-body {
+        text-align: center; /* Centraliza o texto no mobile */
+        width: 100%; /* Garante que o corpo do card ocupe toda a largura disponível */
+        margin-top: 1em; /* Garante que haja um pequeno espaço entre a imagem e o texto */
+    }
+}
+
+/* Forçar cards alinhados à esquerda */
+.row-cards {
+    margin: 0 !important;                 /* remove margin:auto */
+    justify-content: flex-start !important; /* alinha items ao início (esq) */
+    align-items: flex-start !important;
+    padding-left: 3.5rem !important;      /* ajuste opcional de padding */
+}
+
+/* Se o container pai usa utilitários bootstrap que centralizam, sobrescreve */
+.container-card,
+.container-center,
+.row-cards-container {
+    display: flex !important;
+    align-items: flex-start !important;
+}
+
+/* Garante que cards não tenham margin:auto que centralize individualmente */
+.row-cards .profile-card,
+.row-cards .card {
+    margin: 0 !important;
 }

@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/login.css">
-
+    <link rel="stylesheet" href="../CSS/estiloBase.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Acolha - Cadastro</title>
+    <title>Acolha - História dos Imigrantes</title>
 </head>
 
 <style>
@@ -18,7 +17,7 @@
     }
 
     body {
-        background-image: url('../IMG/FundoCadastro.jpeg');
+        background-image: url('../IMG/FundoAcolha.png');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -33,6 +32,10 @@
         align-items: center;
         min-height: 80vh;
         padding: 20px;
+    }
+
+    p{
+        font-family: 'Corpo';
     }
 
     /* Corrige largura da .card no mobile */
@@ -51,10 +54,6 @@
         z-index: 2000 !important;
     }
 
-    p{
-        font-family: 'Corpo';
-    }
-
     /* Força o menu a aparecer acima, mas não quebrar o conteúdo */
     .nav-list {
         z-index: 1500;
@@ -69,24 +68,25 @@
         font-weight: bold;
     }
 
+    .img_TI{
+        height: 10cm;
+    }
+
     /* Coloca o formulário abaixo do menu mobile */
     @media (max-width: 750px) {
         .container-center {
-            margin-top: -100px !important;
-            margin-bottom: -50px !important;
+            margin-top: 100px;
             z-index: 500;
-
         }
 
         .card {
-            width: 95% !important;
+            width: 90%;
         }
 
         .titulo-principal {
             margin-bottom: 25px !important;
 
         }
-
     }
 </style>
 
@@ -95,76 +95,47 @@
     <!-- BARRA DE NAVEGAÇÃO -->
     <header class="header">
         <nav class="nav">
-            <a style="font-family: 'Corpo';" href="../index.html" class="logo"></a>
-            <button class="navegação">
-                <div></div>
-            </button>
+            <a href="../index.html" class="logo"></a>
+            <button class="navegação"></button>
             <ul class="nav-list">
-                <li><a style="font-family: 'Corpo';" href="./AcompanheSuaSolicitação.html">Acompanhe sua Solicitação</a></li>
-                <li><a style="font-family: 'Corpo';" href="#" class="imagem-menu"></a></li>
+                <li><a href="./projetosSociais.html">Projetos Sociais</a></li>
+                <li><a href="#">Ajuda</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="#" class="imagem-menu"></a></li>
+
             </ul>
         </nav>
     </header>
 
     <!-- CORPO DO SITE -->
 
-    <h1 class="titulo-principal" style="
-        margin: 40px 10px 20px;
-        font-family: 'Lemon Tuesday';
-        text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
-        color: #357447;
-        font-weight: bold;
-        font-size: 2.5rem;
-        text-align:center;
-      ">Tela de
-        Cadastro - Pessoa Física</h1>
-
-    <div class="container-center d-flex justify-content-center align-items-center"
-        style="margin-top: 2%; margin-bottom: 5%;">
-        <div class="card" style="width: 80%; padding: 35px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="nome" placeholder="Nome" aria-label="Username"
-                    aria-describedby="basic-addon1">
+ <br>
+ 
+    <div class="container-card">
+        <div class="card-static">
+            <div class="card-icon">
+                <img style="height: 500px !important; margin-bottom: -3px;" class="img_TI" src="../IMG/img-Imigrantes.png" alt="Imagem do TI Verde">
             </div>
+            <div class="card-body">
+                <h5 class="card-title"><strong>História dos Imigrantes</strong></h5>
+                <p style="justify-content: center;" class="card-text">
+                    O fenômeno migratório constitui uma das questões mais complexas e urgentes do século XXI, apresentando desafios multidimensionais aos países de acolhida. No caso brasileiro, essa complexidade se intensifica ao se considerar a histórica, que envolve desafios econômicos, sociais, culturais e políticos. O Brasil tem uma longa história de imigração, com fluxos significativos de imigrantes europeus, asiáticos e latino-americanos, especialmente durante os séculos XIX e XX, impulsionados por fatores como a busca por melhores condições de vida e oportunidades de trabalho.
 
-            <div class="input-group mb-3">
-                <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Recipient’s username"
-                    aria-describedby="basic-addon2">
-                
-
+                    Atualmente, o país continua a ser destino de muitos migrantes, especialmente vindos de países vizinhos, como a Venezuela, além de outros países da América Latina e até da África. Esses fluxos são motivados por fatores como instabilidade política, crises econômicas e desastres naturais. No entanto, os migrantes enfrentam diversos obstáculos, incluindo discriminação, dificuldades de integração no mercado de trabalho e o acesso precário a serviços básicos, como saúde e educação.
+                    
+                    Um dos maiores desafios é a desigualdade regional no Brasil. As regiões Norte e Nordeste, por exemplo, enfrentam maior dificuldade em prover recursos e infraestrutura adequados para acolher os migrantes, enquanto as regiões Sudeste e Sul têm mais recursos, mas também sofrem com tensões relacionadas ao aumento da população migrante. Além disso, muitos migrantes acabam ocupando postos de trabalho informais e precários, o que reflete a falta de políticas públicas de integração e qualificação profissional.
+                    
+                    Apesar dos avanços em termos de legislações que garantem os direitos dos migrantes, como a Lei de Migração de 2017, a implementação dessas políticas ainda enfrenta desafios significativos. A xenofobia e a discriminação também são questões a serem enfrentadas, já que migrantes, especialmente os de países mais empobrecidos, são frequentemente alvo de preconceito.
+                    
+                    Portanto, a integração dos migrantes no Brasil exige uma ação coordenada entre governo, organizações não governamentais e sociedade civil, com foco na promoção da inclusão social, acesso a direitos básicos e oportunidades de trabalho, além de medidas para combater a discriminação e promover a convivência intercultural.
+                </p>
             </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">Senha</span>
-                <input type="password" class="form-control senha" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
-            </div>
-
-            <div class="mb-3">
-                <label for="basic-url" class="form-label">Informações</label>
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon3">CPF</span>
-                    <input type="text" class="form-control cpf" id="basic-url cpf" aria-describedby="basic-addon3 basic-addon4">
-                </div>
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text">Telefone</span>
-                <input type="text" class="form-control telefone" aria-label="Amount (to the nearest dollar)">
-            </div>
-
-            <div class="input-group mb-3">
-                <input type="text" class="form-control nacionalidade" placeholder="Nacionalidade" aria-label="Username">
-                <span class="input-group-text">Data de Nascimento</span>
-                <input type="date" class="form-control dataNasc" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
-            </div>
-
-            <div class="d-flex justify-content-end mt-3">
-                <button type="submit" id="btn" class="btn btn-success">Cadastrar</button>
-            </div>
-
-
         </div>
     </div>
+
+<br>
+ 
+    
 
     <!-- FOOTER -->
 
@@ -220,7 +191,7 @@
                 </p>
 
                 <div id="input_group">
-                    <input type="email" id="email input"/>
+                    <input type="email" id="email">
                     <button>
                         ➤
                     </button>
@@ -238,7 +209,6 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
     <script src="../JS/barraDeNavegação.js"></script>
-    <script src="../JS/cadastro/cadastroPF.js"></script>
 </body>
 
 </html>

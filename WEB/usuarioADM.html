@@ -44,6 +44,50 @@
         padding: 20px;
     }
 
+    .ajuda-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .ajuda-card p {
+        font-family: 'Corpo';
+        color: #333;
+        font-size: 1rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    /* Estilo do botão SOCORRO */
+    .ajuda-card .btn {
+        background-color: #255736;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-family: 'Corpo';
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 250px;
+    }
+
+    .ajuda-card .btn:hover {
+        background-color: #357447;
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(53, 116, 71, 0.4);
+    }
+
+    .ajuda-card .btn:active {
+        transform: scale(0.98);
+    }
+
     @media (max-width: 750px) {
 
         /* Corrige largura da .card no mobile */
@@ -68,30 +112,66 @@
         }
 
         .titulo-principal {
-            margin: 20px;
-            /* margem padrão */
             font-family: 'Lemon Tuesday', cursive;
             text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
             color: #357447;
             font-weight: bold;
         }
 
+        .ajuda-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .ajuda-card p {
+            font-family: 'Corpo';
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        /* Estilo do botão SOCORRO */
+        .ajuda-card .btn {
+            background-color: #255736;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-family: 'Corpo';
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .ajuda-card .btn:hover {
+            background-color: #357447;
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(53, 116, 71, 0.4);
+        }
+
+        .ajuda-card .btn:active {
+            transform: scale(0.98);
+        }
+
         /* Coloca o formulário abaixo do menu mobile */
         @media (max-width: 750px) {
-            .container-center {
-                margin-top: 100px;
-                z-index: 500;
+            .ajuda-card {
+                padding: 1.5rem;
             }
 
-            .card {
-                width: 95% !important;
+            .ajuda-card .btn {
+                width: 100%;
+                padding: 14px 20px;
             }
-
-            .titulo-principal {
-                margin-bottom: 25px !important;
-
-            }
-
         }
     }
 </style>
@@ -131,29 +211,86 @@
             </div>
             <h6 style="margin-left: 20px; margin-top: -10px;">emaildousuario@exemplo.com</h6>
 
-                <p style="margin-top: 20px; margin-left: 20px;"><b>Candidatos à Vagas</b></p>
-                <div class="scroll-wrapper"></div>
+            <p style="margin-top: 20px; margin-left: 20px; margin-bottom: -10px;"><b>Empresas Cadastradas</b></p>
+            <div class="scroll-wrapper">
                 <div class="row-cards">
                     <div class="profile-card">
                         <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
                         <h3 class="card-title">Nome</h3>
                         <p class="card-text">País de Origem</p>
-                        <button style="color: white;" type="button" class="btn btn-warning">Verificar Currículo</button>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
                     </div>
                     <div class="profile-card">
                         <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
                         <h3 class="card-title">Nome</h3>
                         <p class="card-text">País de Origem</p>
-                        <button style="color: white;" type="button" class="btn btn-warning">Verificar Currículo</button>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
                     </div>
                     <div class="profile-card">
                         <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
                         <h3 class="card-title">Nome</h3>
                         <p class="card-text">País de Origem</p>
-                        <button style="color: white;" type="button" class="btn btn-warning">Verificar Currículo</button>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
                     </div>
                 </div>
+            </div>
+            <p style="margin-top: 20px; margin-left: 20px; margin-bottom: -10px;"><b>Usuários Cadastrados</b></p>
+            <div class="scroll-wrapper">
+                <div class="row-cards">
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="../IMG/icone - Copia.png" class="profile-img" alt="Perfil 1">
+                        <h3 class="card-title">Nome</h3>
+                        <p class="card-text">País de Origem</p>
+                        <button style="color: white;" type="button" class="btn btn-warning">Consultar Dados</button>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; margin-left: 20px; margin-bottom: 10px;"><b>Solicitações de Ajuda sem resposta</b></p>
+
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 16px; margin-left: 16px;">
+                <div class="card" style="flex: 1 1 calc(33.333% - 12px); min-width: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Assunto</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Nº de Protocolo</h6>
+                        <p class="card-text">Descrição</p>
+                        <a href="#" class="card-link">Acessar solicitação</a>
+                    </div>
+                </div>
+                <div class="card" style="flex: 1 1 calc(33.333% - 12px); min-width: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Assunto</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Nº de Protocolo</h6>
+                        <p class="card-text">Descrição</p>
+                        <a href="#" class="card-link">Acessar solicitação</a>
+                    </div>
+                </div>
+                <div class="card" style="flex: 1 1 calc(33.333% - 12px); min-width: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Assunto</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Nº de Protocolo</h6>
+                        <p class="card-text">Descrição</p>
+                        <a href="#" class="card-link">Acessar solicitação</a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px;" class="ajuda-card">
+                <p>Você tem <b>[Nº de pendencias]</b> pendências</p>
+                <button class="btn">Consultar</button>
+            </div>
         </div>
+
     </div>
 
     </div>

@@ -28,12 +28,15 @@ form.addEventListener('submit', function(event) {
         }
     })
     .then(data => {
-        console.log('Sucesso:', data);
-        alert('Login realizado com sucesso!');
+        
         if(data.role === 'admin'){
-            window.location.href = '#'; 
+            window.location.href = 'usuarioADM.html'; 
+            console.log(data.accessToken)
+            localStorage.setItem('dados', data.accessToken);
+        
         } else {
             window.location.href = '../index.html'; 
+            localStorage.setItem('dados', data);
         }
     })
     .catch(error => {

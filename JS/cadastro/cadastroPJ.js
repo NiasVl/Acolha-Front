@@ -16,13 +16,26 @@ btn.addEventListener("click", function(){
         alert("Por favor, preencha todos os campos.")
         return 
     } 
+
+            let dataEmpresa = {
+                nome: nomeEmpresa.value,
+                email: emailEmpresa.value,
+                senha: senhaEmpresa.value,
+                cnpj: cnpjEmpresa.value,
+                telefone: telefoneEmpresa.value,
+                nomeRep: nomeRepresentante.value,
+                cargoRep: cargoRepresentante,
+                nichoEmpresa: nichoEmpresa.value,
+                msg: msgToADM.value
+            }
+
         try{
             fetch("http://localhost:3000/acolha/v1/add_empresa", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"  
                 },
-                body: JSON.stringify(dataUsuario) 
+                body: JSON.stringify(dataEmpresa) 
             })
             .then(res => res.json()) // converte a resposta em JSON
             .then(data => {
@@ -31,7 +44,7 @@ btn.addEventListener("click", function(){
             alert("Cadastro realizado com sucesso!")
             setTimeout(() => {
                 window.location.href = "login.html"
-            }, 3000);
+            }, 1000);
                 
             
             }

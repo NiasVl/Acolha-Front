@@ -65,7 +65,7 @@ btn.addEventListener('click', () => {
                 alert("Cadastro realizado com sucesso!")
                 setTimeout(() => {
                     window.location.href = "login.html"
-                }, 3000); // Redireciona após 2 segundos
+                }, 1000); // Redireciona após 2 segundos
                 
             
             }

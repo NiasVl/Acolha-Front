@@ -37,19 +37,29 @@ btn.addEventListener("click", function(){
                 },
                 body: JSON.stringify(dataEmpresa) 
             })
-            .then(res => res.json()) // converte a resposta em JSON
+            .then(res => res.json()) 
             .then(data => {
                 console.log("Resposta do servidor:", data);
             })
-            alert("Cadastro realizado com sucesso!")
+            Swal.fire({
+                icon: "success",
+                title: "Cadastro realizado com sucesso!",
+                showConfirmButton: false,
+                timer: 1500
+            });
             setTimeout(() => {
                 window.location.href = "login.html"
-            }, 1000);
+            }, 1500);
                 
             
             }
             catch(error){
                 console.error("Erro ao enviar dados:", error);
+                swal.fire({
+                    icon: "error",
+                    title: "Erro ao cadastrar empresa. Tente novamente mais tarde.",
+                    showConfirmButton: true
+                });
             }
     
         console.log(dataEmpresa)

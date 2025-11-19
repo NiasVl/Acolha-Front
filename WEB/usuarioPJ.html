@@ -125,11 +125,33 @@
         color: #357447;
         font-weight: bold;
         font-size: 2.5rem; margin-left: 17px;
-      ">Olá, NOME!</h1>
+      ">Olá,<span
+              style="
+                font-family: 'Lemon Tuesday';
+                text-shadow: 2px 2px 0 #ffffff, -1px -1px 0 #ffffff,
+                  1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
+                color: #357447;
+                font-weight: bold;
+                font-size: 2.5rem;
+                margin-left: 5px;
+              "
+              class="titulo-principal span-nome"
+              >Nome!</span
+            ></h1>
 
                 <a href=""><img style="width: 60px; height: 60px; margin-top: 20px;" src="../IMG/icone.png" alt=""></a>
             </div>
-            <h6 style="margin-left: 20px; margin-top: -10px;">emaildousuario@exemplo.com</h6>
+            <h6 style="margin-left: 20px; margin-top: -10px;" class="email" >emaildousuario@exemplo.com</h6>
+
+                <button id="btnCriarVaga" class="btn btn-success" style="margin-left:20px; margin-bottom:20px;">
+    Criar Nova Vaga
+</button>
+
+<p style="margin-top: 20px; margin-left: 20px;"><b>Minhas Vagas</b></p>
+<div class="scroll-wrapper">
+    <div class="row-cards" id="listaVagas"></div>
+</div>
+
 
                 <p style="margin-top: 20px; margin-left: 20px;"><b>Candidatos à Vagas</b></p>
                 <div class="scroll-wrapper"></div>
@@ -235,6 +257,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    <script type="module" src="../JS/empresa/dadosEmpresa.js"></script>
+    <script type="module" src="../JS/empresa/vagas/btnCriarVagas.js"></script>     
+    <script type="module" src="../JS/empresa/vagas/listarVagas.js"></script>     
     <script src="../JS/barraDeNavegação.js"></script>
 </body>
 

@@ -1,47 +1,126 @@
-let email = document.getElementById("email")
-let senha = document.getElementById("senha")
-let btn = document.querySelector(".btn")
+let emailD = document.getElementById("email");
+let senhaD = document.getElementById("senha");
 const form = document.getElementById('formLogin');
 
 form.addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  
-    
+    event.preventDefault();
 
-    let user = {
-        email: email.value,
-        senha: senha.value
-    }
+    Swal.fire({
+        title: 'Qual tipo de usuário?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Pessoa Física',
+        denyButtonText: 'Pessoa Jurídica',
+    }).then((result) => {
 
-    fetch('http://localhost:3000/acolha/v1/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json(); 
-        } else {
-            throw new Error('Erro na autenticação');
+        if (result.isConfirmed) {
+
+            
+            
+
+            fetch('http://localhost:3000/acolha/v1/login_usuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email: emailD.value, senha: senhaD.value})
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na autenticação');
+                }
+                return response.json();
+            })
+            .then(data => {
+
+                localStorage.setItem('dados', data.accessToken);
+
+                if (data.role === 'admin') {
+                        swal.fire({
+                    icon: "success",
+                    title: "Login realizado com sucesso!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                
+                 setTimeout(() => {
+                    window.location.href = 'usuarioADM.html'
+                }, 1500);
+                } else {
+                    swal.fire({
+                    icon: "success",
+                    title: "Login realizado com sucesso!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                
+                 setTimeout(() => {
+                    window.location.href = 'usuarioPF.html'
+                }, 1500);
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                swal.fire({
+                    icon: "error",
+                    title: "Falha no login. Verifique suas credenciais e tente novamente.",
+                    showConfirmButton: true
+                });
+            });
+
         }
-    })
-    .then(data => {
-        
-        if(data.role === 'admin'){
-            window.location.href = 'usuarioADM.html'; 
-            console.log(data.accessToken)
-            localStorage.setItem('dados', data.accessToken);
-        
-        } else {
-            window.location.href = '../index.html'; 
-            localStorage.setItem('dados', data);
-        }
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Falha no login. Verifique suas credenciais e tente novamente.');
-    });
 
-})
+        else if (result.isDenied) {
+
+            
+           
+
+            fetch('http://localhost:3000/acolha/v1/login_empresa', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email: emailD.value, senha: senhaD.value})
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na autenticação');
+                }
+                return response.json();
+            })
+            .then(data => {
+
+                localStorage.setItem('dados', data.accessToken);
+                     
+                    if (data){
+
+                        swal.fire({
+                            icon: "success",
+                            title: "Login realizado com sucesso!",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        
+                         setTimeout(() => {
+                            window.location.href = 'usuarioPJ.html'
+                        }, 1500);
+                    } else{
+                        swal.fire({
+                            icon: "error",
+                            title: "Erro ao logar. Tente novamente mais tarde.",
+                            showConfirmButton: true
+                        });
+                    }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                swal.fire({
+                    icon: "error",
+                    title: "Falha no login. Verifique suas credenciais e tente novamente.",
+                    showConfirmButton: true
+                });
+            });
+        }
+
+    }); 
+});

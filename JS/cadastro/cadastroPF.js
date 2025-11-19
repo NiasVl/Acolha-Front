@@ -16,7 +16,7 @@ function temMaisDe12Anos(dataNasc) {
   const [ano, mes, dia] = dataNasc.value.split('-').map(Number);
 
   const hoje = new Date();  
-  const nascimento = new Date(ano, mes - 1, dia); // mês é zero-based
+  const nascimento = new Date(ano, mes - 1, dia);
 
   let idade = hoje.getFullYear() - nascimento.getFullYear();
   const m = hoje.getMonth() - nascimento.getMonth();
@@ -30,7 +30,7 @@ function temMaisDe12Anos(dataNasc) {
 
 btn.addEventListener('click', () => {
 
-        if(nome.value == "" || email.value == "" || senha.value == "" || cpf.value == "" || telefone.value == "" || nacionalidade.value == "" || dataNasc.value == ""){
+        if(nome.value == "" || email.value == "" || senha.value == "" || telefone.value == "" || nacionalidade.value == "" || dataNasc.value == ""){
             alert("Por favor, preencha todos os campos.")
             return 
         }
@@ -58,19 +58,29 @@ btn.addEventListener('click', () => {
                         },
                         body: JSON.stringify(dataUsuario) 
                     })
-                .then(res => res.json()) // converte a resposta em JSON
+                .then(res => res.json())
                 .then(data => {
                     console.log("Resposta do servidor:", data);
                 })
-                alert("Cadastro realizado com sucesso!")
+                Swal.fire({
+                    icon: "success",
+                    title: "Cadastro realizado com sucesso!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 setTimeout(() => {
                     window.location.href = "login.html"
-                }, 1000); // Redireciona após 2 segundos
+                }, 1500); 
                 
             
             }
             catch(error){
                 console.error("Erro ao enviar dados:", error);
+                swal.fire({
+                    icon: "error",
+                    title: "Erro ao cadastrar usuário. Tente novamente mais tarde.",
+                    showConfirmButton: true
+                });
             }
         }
             

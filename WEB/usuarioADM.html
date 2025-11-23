@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="../CSS/login.css" />
 
-    <title>Acolha - Usuário</title>
+    <title>Acolha - ADM</title>
   </head>
 
   <style>
@@ -198,6 +198,15 @@
           <li>
             <a style="font-family: 'Corpo'" href="#" class="imagem-menu"></a>
           </li>
+                    <li>
+            <button
+              id="btnLogout"
+              class="btn btn-danger"
+              style="margin-left: 15px; color: white; font-family: 'Corpo'"
+            >
+              Sair
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -277,62 +286,13 @@
         </div>
 
         <p style="margin-top: 20px; margin-left: 20px; margin-bottom: 10px">
-          <b>Solicitações de Ajuda sem resposta</b>
+          <b>Solicitações de Ajuda </b>
         </p>
 
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-left: 16px;
-          "
-        >
-          <div
-            class="card"
-            style="flex: 1 1 calc(33.333% - 12px); min-width: 250px"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Assunto</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">
-                Nº de Protocolo
-              </h6>
-              <p class="card-text">Descrição</p>
-              <a href="#" class="card-link">Acessar solicitação</a>
-            </div>
-          </div>
-          <div
-            class="card"
-            style="flex: 1 1 calc(33.333% - 12px); min-width: 250px"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Assunto</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">
-                Nº de Protocolo
-              </h6>
-              <p class="card-text">Descrição</p>
-              <a href="#" class="card-link">Acessar solicitação</a>
-            </div>
-          </div>
-          <div
-            class="card"
-            style="flex: 1 1 calc(33.333% - 12px); min-width: 250px"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Assunto</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">
-                Nº de Protocolo
-              </h6>
-              <p class="card-text">Descrição</p>
-              <a href="#" class="card-link">Acessar solicitação</a>
-            </div>
-          </div>
-        </div>
-        <div style="margin-top: 30px" class="ajuda-card">
-          <p>Você tem <b>[Nº de pendencias]</b> pendências</p>
-          <button class="btn">Consultar</button>
-        </div>
+        <div class="row-cards" id="cards-container-solicitacoes"></div>
+
+        
+
       </div>
     </div>
 
@@ -442,6 +402,8 @@
     <script src="../JS/barraDeNavegação.js"></script>
     <script src="../JS/ADM/dadosADM.js" type="module"></script>
     <script src="../JS/ADM/alertUsuarios.js" type="module"></script>
+    <script src="../JS/ADM/alertSolicitacoes.js" type="module"></script>
+    <script src="../JS/btnSair.js"></script>
     <script type="module" src="../JS/ADM/alertEmpresas.js"></script>
   </body>
 </html>

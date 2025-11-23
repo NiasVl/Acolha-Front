@@ -47,11 +47,13 @@ form.addEventListener('submit', function(event) {
                     window.location.href = 'usuarioADM.html'
                 }, 1500);
                 } else {
+                    
                     swal.fire({
                     icon: "success",
                     title: "Login realizado com sucesso!",
                     showConfirmButton: false,
                     timer: 1500
+
                 });
                 
                  setTimeout(() => {

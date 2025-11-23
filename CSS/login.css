@@ -590,6 +590,9 @@ a {
     margin-left: 10px;
     padding: 2rem 1.5rem;
     color: #fff;
+        justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 .profile-card:hover {

@@ -35,7 +35,7 @@ function gerarCards(usuarios) {
         return;
     }
 
-    container.innerHTML = ""; // limpa
+    container.innerHTML = ""; 
 
     usuarios.forEach(usuario => {
         const card = document.createElement("div");
@@ -48,7 +48,7 @@ function gerarCards(usuarios) {
             <button class="btn btn-warning-usuario btn-warning" type="button">Consultar Dados</button>
         `;
 
-        // Quando clicar no botão → abre o SweetAlert com os dados
+ 
         card.querySelector("button").addEventListener("click", () => {
             Swal.fire({
                 title: `Dados de <h1 style = "color: black"><b>${usuario.nome}</b></h1>`,
@@ -79,7 +79,7 @@ function gerarCards(usuarios) {
                     .then(response => {
                         if (response.ok) {
                             Swal.fire('Usuário excluído com sucesso!', '', 'success');
-                            carregarUsuarios(); // Recarrega a lista de usuários
+                            carregarUsuarios();  
                         } else {
                             Swal.fire('Erro ao excluir usuário.', '', 'error');
                         }
